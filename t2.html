@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="t2.css">
+    <link rel="stylesheet" href="menu.css">
+    <link rel="stylesheet" type="text/css" href="leadone.css">
+    <link href="assets/css/reset.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link rel="stylesheet" type="text/css" href="fonts/font-awesome-4.2.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="css2/menu_cornermorph.css" />
+    <link rel="stylesheet" href="css2/style.css">
+    <link rel="stylesheet" href="css2/iconfont.css">
+    <link href='http://fonts.googleapis.com/css?family=PT+Sans:400,700' rel='stylesheet' type='text/css'>
+    <link href="assets/css/style.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="assets/js/jquery-1.8.2.min.js" charset="utf-8"></script>
+    <script type="text/javascript" src="assets/js/hovermenu.js" charset="utf-8"></script>
+    <audio id="myaudio" src="水月陵 - Summer Pockets.mp3" controls="controls" loop="false" hidden="true" >
+    </audio>
+    <title>全局授课模式</title>
+    <style>
+      /* NOTE: The styles were added inline because Prefixfree needs access to your styles and they must be inlined if they are on local disk! */
+      /* Updated version - 24th Nov 2014 */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block;
+}
+
+/* Variables */
+body {
+  background-image: url(bg001.png);
+  z-index: 0;
+  font-family: "Simhei", sans-serif;
+}
+
+@font-face {
+  font-family: 'Genericons';
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot");
+  src: url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.woff") format("woff"), url("https://s3-us-west-2.amazonaws.com/s.cdpn.io/53819/genericons-regular-webfont.eot") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+[class*="genericon"] {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  -webkit-font-smoothing: antialiased;
+  font-size: 16px;
+  line-height: 1;
+  font-family: 'Genericons';
+  text-decoration: inherit;
+  font-weight: normal;
+  font-style: normal;
+  vertical-align: top;
+}
+
+/* IE7 */
+[class*="genericon"] {
+  *overflow: auto;
+  *zoom: 1;
+  *display: inline;
+}
+
+.container {
+  margin: 80px auto;
+}
+
+.accordion {
+  background: #5ab2ca;
+  width: 100%;
+  min-width: 950px;
+  display: block;
+  list-style-type: none;
+  overflow: hidden;
+  height: 100px;
+  font-size: 0;
+}
+
+.tabs {
+  display: inline-block;
+  background-color: #6dc5dd;
+  border-right: #5ab2ca 1px solid;
+  width: 80px;
+  height: 1000px;
+  overflow: hidden;
+  position: relative;
+  margin: 0;
+  font-size: 16px;
+  -moz-transition: all 0.4s ease-in-out 0.1s;
+  -o-transition: all 0.4s ease-in-out 0.1s;
+  -webkit-transition: all 0.4s ease-in-out;
+  -webkit-transition-delay: 0.1s;
+  transition: all 0.4s ease-in-out 0.1s;
+}
+.tabs:hover {
+  width: 450px;
+}
+.tabs:hover .social-links a:before {
+  margin-left: -100px;
+}
+.tabs:hover .social-links a:after {
+  margin-left: -5px;
+}
+.tabs .paragraph {
+  position: relative;
+  width: 360px;
+  margin-left: 80px;
+  padding: 50px 0 0 10px;
+  height: 100px;
+  background: #fff;
+}
+.tabs .paragraph h1 {
+  font-size: 3em;
+  margin-bottom: 10px;
+}
+.tabs .paragraph p {
+  font-size: 0.88em;
+  line-height: 1.5em;
+  padding-right: 30px;
+}
+
+.social-links {
+  display: block;
+}
+.social-links a {
+  display: block;
+  text-indent: -9999px;
+  font-size: 0;
+  line-height: 0;
+}
+.social-links a:before, .social-links a:after {
+  -moz-transition: all 0.4s ease-in-out 0.1s;
+  -o-transition: all 0.4s ease-in-out 0.1s;
+  -webkit-transition: all 0.4s ease-in-out;
+  -webkit-transition-delay: 0.1s;
+  transition: all 0.4s ease-in-out 0.1s;
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  text-indent: 0;
+  padding-top: 45px;
+  padding-left: 25px;
+  display: block;
+  font: normal 30px Genericons;
+  color: #fff;
+}
+.social-links a:after {
+  font-size: 48px;
+  padding-left: 20px;
+  padding-top: 40px;
+  margin-left: 85px;
+}
+
+.twitter-icon a:before, .twitter-icon a:after {
+  content: '\f403';
+}
+.twitter-icon a:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyNC4wLjEsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0i5Zu+5bGCXzEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6eGxpbms9Imh0dHA6Ly93d3cudzMub3JnLzE5OTkveGxpbmsiIHg9IjBweCIgeT0iMHB4Ig0KCSB2aWV3Qm94PSIwIDAgNDAwIDQwMCIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAgNDAwIDQwMDsiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPGc+DQoJCTxnPg0KCQkJPHBhdGggZD0iTTIwNS43NywyMjIuMzNoLTEyLjE5di0xLjE1YzAtMC40OC0wLjM5LTAuODctMC44Ny0wLjg3aC0yMi4xNHYtNDIuMDhoMi4zdjM5Ljc4aDE5Ljg0YzEuMzQsMCwyLjQ5LDAuODQsMi45NSwyLjAyaDguMDINCgkJCQljMC40Ni0xLjE4LDEuNjEtMi4wMiwyLjk1LTIuMDJoMTkuODR2LTM5Ljc4aDIuM3Y0Mi4wOGgtMjIuMTRjLTAuNDgsMC0wLjg3LDAuMzktMC44NywwLjg3VjIyMi4zM3oiLz4NCgkJPC9nPg0KCQk8Zz4NCgkJCTxwYXRoIGQ9Ik0yMDEuODEsMjE3LjloLTQuMjdsLTAuMzUtMC40MmMtMS4xMS0xLjM0LTIuNzQtMi4xMS00LjQ4LTIuMTFoLTE3LjJ2LTM3LjEzaDE3LjJjMi45NSwwLDUuNTQsMS41OSw2Ljk2LDMuOTUNCgkJCQljMS40Mi0yLjM3LDQuMDEtMy45NSw2Ljk2LTMuOTVoMTcuMnYzNy4xM2gtMTcuMmMtMS43NCwwLTMuMzcsMC43Ny00LjQ4LDIuMTFMMjAxLjgxLDIxNy45eiBNMTk4LjYsMjE1LjZoMi4xNQ0KCQkJCWMxLjUzLTEuNjEsMy42NS0yLjUzLDUuODktMi41M2gxNC45di0zMi41M2gtMTQuOWMtMy4yMSwwLTUuODEsMi42MS01LjgxLDUuODFoLTIuM2MwLTMuMjEtMi42MS01LjgxLTUuODEtNS44MWgtMTQuOXYzMi41Mw0KCQkJCWgxNC45QzE5NC45NSwyMTMuMDcsMTk3LjA3LDIxMy45OCwxOTguNiwyMTUuNnoiLz4NCgkJPC9nPg0KCQk8Zz4NCgkJCTxyZWN0IHg9IjE5OC41MiIgeT0iMTg0LjA2IiB3aWR0aD0iMi4zIiBoZWlnaHQ9IjMzLjg0Ii8+DQoJCTwvZz4NCgk8L2c+DQoJPGc+DQoJCTxyZWN0IHg9IjE4MS4wNyIgeT0iMTg3LjI5IiB3aWR0aD0iNy43MiIgaGVpZ2h0PSIyLjMiLz4NCgk8L2c+DQoJPGc+DQoJCTxyZWN0IHg9IjE4MS4wNyIgeT0iMTkxLjUiIHdpZHRoPSIxNC4zMyIgaGVpZ2h0PSIyLjMiLz4NCgk8L2c+DQoJPGc+DQoJCTxyZWN0IHg9IjE4MS4wNyIgeT0iMTk1LjciIHdpZHRoPSIxNC4zMyIgaGVpZ2h0PSIyLjMiLz4NCgk8L2c+DQoJPGc+DQoJCTxyZWN0IHg9IjE4MS4wNyIgeT0iMTk5LjkxIiB3aWR0aD0iMTQuMzMiIGhlaWdodD0iMi4zIi8+DQoJPC9nPg0KCTxnPg0KCQk8cGF0aCBkPSJNMjE4LjM3LDIwMi4yMWgtMTQuM3YtMTQuOTFoMTQuM1YyMDIuMjF6IE0yMDYuMzcsMTk5LjkxaDkuN3YtMTAuMzFoLTkuN1YxOTkuOTF6Ii8+DQoJPC9nPg0KPC9nPg0KPC9zdmc+DQo=');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7adcf9), color-stop(100%, #4bc9f5));
+  background-image: -moz-linear-gradient(#7adcf9, #4bc9f5);
+  background-image: -webkit-linear-gradient(#7adcf9, #4bc9f5);
+  background-image: linear-gradient(#7adcf9, #4bc9f5);
+}
+
+.facebook-icon a:before, .facebook-icon a:after {
+  content: '\f427';
+}
+.facebook-icon a:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzU0OGFiZiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzI5NWI5ZSIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #548abf), color-stop(100%, #295b9e));
+  background-image: -moz-linear-gradient(#548abf, #295b9e);
+  background-image: -webkit-linear-gradient(#548abf, #295b9e);
+  background-image: linear-gradient(#548abf, #295b9e);
+}
+
+.linkedin-icon a:before, .linkedin-icon a:after {
+  content: '\f444';
+}
+.linkedin-icon a:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzAwYTljZCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzAwODNiNCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #00a9cd), color-stop(100%, #0083b4));
+  background-image: -moz-linear-gradient(#00a9cd, #0083b4);
+  background-image: -webkit-linear-gradient(#00a9cd, #0083b4);
+  background-image: linear-gradient(#00a9cd, #0083b4);
+}
+
+.insta-icon a:before, .insta-icon a:after {
+  content: '\f400';
+}
+.insta-icon a:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzdmYzEyMSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzI5ODczMyIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #7fc121), color-stop(100%, #298733));
+  background-image: -moz-linear-gradient(#7fc121, #298733);
+  background-image: -webkit-linear-gradient(#7fc121, #298733);
+  background-image: linear-gradient(#7fc121, #298733);
+}
+
+.youtube-icon a:before, .youtube-icon a:after {
+  content: '\f408';
+}
+.youtube-icon a:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2RmMTkyYSIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2M0MTIyMiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #df192a), color-stop(100%, #c41222));
+  background-image: -moz-linear-gradient(#df192a, #c41222);
+  background-image: -webkit-linear-gradient(#df192a, #c41222);
+  background-image: linear-gradient(#df192a, #c41222);
+}
+
+.tumblr-icon a:before, .tumblr-icon a:after {
+  content: '\f417';
+}
+.tumblr-icon a:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iIzI4M2U1NiIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iIzMyNTM3MiIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #283e56), color-stop(100%, #325372));
+  background-image: -moz-linear-gradient(#283e56, #325372);
+  background-image: -webkit-linear-gradient(#283e56, #325372);
+  background-image: linear-gradient(#283e56, #325372);
+}
+
+.dribbble-icon a:before, .dribbble-icon a:after {
+  content: '\f439';
+}
+.dribbble-icon a:after {
+  background-image: url('data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4gPHN2ZyB2ZXJzaW9uPSIxLjEiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGRlZnM+PGxpbmVhckdyYWRpZW50IGlkPSJncmFkIiBncmFkaWVudFVuaXRzPSJvYmplY3RCb3VuZGluZ0JveCIgeDE9IjAuNSIgeTE9IjAuMCIgeDI9IjAuNSIgeTI9IjEuMCI+PHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UwM2E3MCIvPjxzdG9wIG9mZnNldD0iMTAwJSIgc3RvcC1jb2xvcj0iI2YxODliOCIvPjwvbGluZWFyR3JhZGllbnQ+PC9kZWZzPjxyZWN0IHg9IjAiIHk9IjAiIHdpZHRoPSIxMDAlIiBoZWlnaHQ9IjEwMCUiIGZpbGw9InVybCgjZ3JhZCkiIC8+PC9zdmc+IA==');
+  background-size: 100%;
+  background-image: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(0%, #e03a70), color-stop(100%, #f189b8));
+  background-image: -moz-linear-gradient(#e03a70, #f189b8);
+  background-image: -webkit-linear-gradient(#e03a70, #f189b8);
+  background-image: linear-gradient(#e03a70, #f189b8);
+}
+
+    </style>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+
+</head>
+<body>
+  <input type="checkbox" id="menu-toggle"/>
+  <label id="trigger" for="menu-toggle"></label>
+  <label id="burger" for="menu-toggle"></label>
+  <ul id="menu" style="text-align: center;font-size: 60px;">
+    <li><a href="#">&nbsp</a></li>
+    <li><a href="../../课件主页部分/index.html">&nbsp回到主页</a></li>
+    <li><a href="#">&nbsp</a></li>
+    <li><a href="https://note.youdao.com/ynoteshare/index.html?id=e0646f763f59a1410d35612ac59135fe&type=note&_time=1647078425017" target="blank">&nbsp操作指南</a></li>
+    <li><a href="#">&nbsp</a></li>
+    <li><a href="../../功能页部分/导学案/导学案 主页.html" target="blank">&nbsp课堂导学</a></li>
+    <li><a href="#">&nbsp</a></li>
+    <li><a href="../../课件压缩包.zip">&nbsp下载课件</a></li>
+    <li><a href="#">&nbsp</a></li>
+    <li><a href="https://www.tapechat.net/uu/PTV2I9/XV38SZZ1" target="blank">&nbsp意见反馈</a></li>
+    <li><a href="#">&nbsp</a></li>
+    <li><a href="../../功能页部分/疑难解答/疑难解答.html" target="blank">&nbsp疑难解答</a></li>
+    <li><a href="#">&nbsp</a></li>
+    <li><a href="../../功能页部分/课外拓展/课外拓展.html" target="blank">&nbsp课外扩展</a></li>
+    <li><a href="#">&nbsp</a></li>
+    <li><a href="https://m.umu.cn/ssu_2LIE3b4cc" target="blank">&nbsp课后讨论</a></li>
+  </ul>
+  <a class="button2" href="#popup" style="position: absolute;right: 60px;bottom: 40px;">操作指南</a>
+  <div class="popup" id="popup">
+    <div class="popup-inner">
+        <img src="bg002.png" alt="">
+      <a class="popup__close" href="#">X</a>
+    </div>
+  </div>
+<div class="containers">
+    <div class="menu-wrap">
+        <nav class="menu">
+            <div class="wrap" style="position: absolute;top: -50px;left:10px">
+                <div class="head">全局导航</div>
+                <ul class="out_ul">
+                    <li style="display: block;"><a href="../../课件主页部分/index.html"><i class="iconfont">&#xe65e</i>回到主页</a></li>
+                    <li style="display: block;"><a href="../../part1 情景设计/index.html"><i class="iconfont">&#xe6fe</i>专题故事</a></li>
+                    <li style="display: block;">
+                        <a href="#"><i class="iconfont">&#xe632</i>课程主线<span>+</span></a>
+                        <ul class="Portfolio_ul content">
+                            <li style="display: block;"><a href="../../精简预览模式/index.html">全局预览模式</a></li>
+                        </ul>
+                        <ul class="Services_ul content">
+                            <li style="display: block;">
+                                <a href="../情景引入/t2.html">情景引入</a>
+                            </li>
+                            <li style="display: block;">
+                                <a href="../实验探究/t2.html">实验探究</a>
+                            </li>
+                            <li style="display: block;">
+                                <a href="../知识梳理/t2.html">知识梳理</a>
+                            </li>
+                            <li style="display: block;">
+                                <a href="../微观探析/t2.html">微观探析</a>
+                            </li>
+                            <li style="display: block;">
+                                <a href="../模型建立/t2.html">模型建立</a>
+                            </li>
+                            <li style="display: block;">
+                                <a href="../影响对比/t2.html">影响对比</a>
+                            </li>
+                            <li style="display: block;">
+                                <a href="../扩展应用/t2.html">拓展应用</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="display: block;">
+                        <a href="#"><i class="iconfont">&#xe77d</i>辅助功能<span>+</span></a>
+                        <ul class="Portfolio_ul content">
+                                <li style="display: block;"><a href="../../功能页部分/笔记本/index.html">笔记本</a></li>
+                                <li style="display: block;"><a href="../../功能页部分/导学案/导学案 主页.html">课堂导学</a></li>
+                                <li style="display: block;"><a href="https://note.youdao.com/ynoteshare/index.html?id=e0646f763f59a1410d35612ac59135fe&type=note&_time=1647078425017">操作指南</a></li>
+                                <li style="display: block;"><a href="../../课件压缩包.zip">下载内容</a></li>
+                                <li style="display: block;"><a href="../../课件说明页/index.html">课件说明</a></li>
+                                <li style="display: block;"><a href="../../功能页部分/疑难解答/疑难解答.html">疑难解答</a></li>
+                                <li style="display: block;"><a href="../../../网站分享/open.html">分享点赞</a></li>
+                                <li style="display: block;"><a href="https://m.umu.cn/ssu_2LIE3b4cc">课后讨论</a></li>
+                                <li style="display: block;"><a href="../../功能页部分/课外拓展/课外拓展.html">课外扩展</a></li>
+                            </ul>
+                    </li>
+                    <li style="display: block;">
+                        <a href="#"><i class="iconfont">&#xe6aa</i>课后练习<span>+</span></a>
+                        <ul class="Services_ul content">
+                            <li style="display: block;">
+                                <a href="#">小试牛刀<span>+</span></a>
+                                <ul id="Design_ul" class="content">
+                                    <li style="display: block;"><a href="../../part3 作业题组/小试牛刀 - Storyline output/story_html5.html" target="_blank">题组1</a></li>
+                                    <li style="display: block;"><a href="../../part3 作业题组/小试牛刀2.0 - Storyline output/story_html5.html" target="_blank">题组2</a></li>
+                                    <li style="display: block;"><a href="../../part3 作业题组/小试牛刀3.0 - Storyline output/story_html5.html" target="_blank">题组3</a></li>
+                                </ul>
+                            </li>
+                            <li style="display: block;">
+                                <a href="#">进阶训练<span>+</span></a>
+                                <ul id="Design_ul" class="content">
+                                    <li style="display: block;"><a href="../../part3 作业题组/进阶训练 - Storyline output/story_html5.html" target="_blank">题组4</a></li>
+                                    <li style="display: block;"><a href="../../part3 作业题组/进阶训练2.0 - Storyline output/story_html5.html" target="_blank">题组5</a></li>
+                                    <li style="display: block;"><a href="../../part3 作业题组/进阶训练3.0 - Storyline output/story_html5.html" target="_blank">题组6</a></li>
+                                </ul>
+                            </li>
+                            <li style="display: block;">
+                                <a href="#">高考热点<span>+</span></a>
+                                <ul id="Design_ul" class="content">
+                                    <li style="display: block;"><a href="../../part3 作业题组/高考热点 - Storyline output/story_html5.html" target="_blank">题组7</a></li>
+                                    <li style="display: block;"><a href="../../part3 作业题组/高考热点2.0 - Storyline output/story_html5.html" target="_blank">题组8</a></li>
+                                    <li style="display: block;"><a href="../../part3 作业题组/高考热点3.0 - Storyline output/story_html5.html" target="_blank">题组9</a></li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li style="display: block;">
+                        <a href="#"><i class="iconfont">&#xe640</i>切换模式<span>+</span></a>
+                        <ul class="Portfolio_ul content">
+                                <li style="display: block;"><a href="../../../教师视角/课件主页部分/index.html">教师视角</a></li>
+                                <li style="display: block;"><a href="../../../学生视角/课件主页部分/index.html">学生视角</a></li>
+                                <li style="display: block;"><a href="https://github.com/ligoligo0411">开发者视角</a></li>
+                            </ul>
+                    </li>
+                    <li style="display: block;">
+                        <a href="#"><i class="iconfont">&#xe6a9</i>联系我们<span>+</span></a>
+                        <ul class="Portfolio_ul content">
+                                <li style="display: block;"><a href="../../功能页部分/作者信息/index.html">联系方式</a></li>
+                                <li style="display: block;"><a href="https://www.tapechat.net/uu/PTV2I9/XV38SZZ1">意见反馈</a></li>
+                            </ul>
+                    </li>
+                </ul>
+                <div class="foot">&nbsp</div>
+            </div>
+        </nav>
+    </div>
+    <button class="menu-button" id="open-button"><i class="fa fa-sitemap"></i><span>Open Menu</span></button>
+</div><!-- /container -->
+<div style="position: absolute;bottom: 45px;left: 90px;"><h1 style="color: #000000;font-size: 30px;">全局导航</h1></div>
+  <div class="container" style="position: absolute;top: -100px;right: 400px;z-index: -1;">
+    <ul class="accordion">
+      <li class="tabs">
+        <div class="social-links twitter-icon" >
+          <a href="../情景引入/t2.html">Twitter</a>
+        </div>
+        <div class="paragraph" style="color: #000000;">
+          <h1>情景引入</h1>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links facebook-icon">
+          <a href="../实验探究/t2.html">Facebook</a>
+        </div>
+        <div class="paragraph" style="color: #000000;">
+          <h1 >实验探究</h1>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links linkedin-icon">
+           <a href="../知识梳理/t2.html">LinkedIn</a>
+        </div>
+        <div class="paragraph" style="color: #000000;">
+          <h1>知识梳理</h1>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links insta-icon">
+          <a href="../微观探析/t2.html">Instagram</a>
+        </div>
+        <div class="paragraph" style="color: #000000;">
+          <h1>微观探析</h1>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links youtube-icon">
+          <a href="../模型建立/t2.html">Youtube</a>
+        </div>
+        <div class="paragraph" style="color: #000000;">
+          <h1>模型建立</h1>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links tumblr-icon">
+          <a href="../影响对比/t2.html">Tumblr</a>
+        </div>
+        <div class="paragraph" style="color: #000000;">
+          <h1>影响对比</h1>
+        </div>
+      </li>
+      <li class="tabs">
+        <div class="social-links dribbble-icon">
+          <a href="../扩展应用/t2.html">Dribbble</a>
+        </div>
+        <div class="paragraph" style="color: #000000;">
+          <h1>扩展应用</h1>
+        </div>
+      </li>
+    </ul>
+  </div>
+    <div class="slider-ctr" style="position: absolute;top: 41.5%;left: 31.75%;z-index: -1;">
+      <figure class="slide text-on"><img src="../模型建立/pic/p48.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">48</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p47.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">47</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p47.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">47</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p46.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">46</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p45.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">45</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p45.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">45</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p44.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">44</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p44.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">44</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p43.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">43</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/t3.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">&nbsp</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/t3.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">&nbsp</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p42.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">42</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p42.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">42</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p41.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">41</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p41.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">41</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p40.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">40</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p39.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">39</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p38.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">38</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p38.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">38</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p37.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">37</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p37.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">37</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p36.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">36</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p36.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">36</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p35.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">35</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p35.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">35</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p34.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">34</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p34.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">34</div>
+        </figcaption>
+      </figure>
+      <figure class="slide text-on"><img src="../模型建立/pic/p33.1.png" alt="Ocean"/>
+        <figcaption>
+          <div class="title">33</div>
+        </figcaption>
+      </figure>
+        <figure class="slide text-on"><img src="../模型建立/pic/p33.png" alt="Ocean"/>
+          <figcaption>
+            <div class="title">33</div>
+          </figcaption>
+        </figure>
+        <div class="slider-control">
+          <div class="control prev disabled">
+            <div class="icon ion-chevron-left">&#8592</div>
+          </div>
+          <div class="control next">
+            <div class="icon ion-chevron-right">&#8594</div>
+          </div>
+        </div>
+      </div>
+<script src="t2.js"></script>
+<script src="js2/classie.js"></script>
+<script src="js2/main.js"></script>
+<script src="js2/js.js"></script>
+<script src="js2/iconfont.js"></script>
+</body>
+</html>

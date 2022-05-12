@@ -1,0 +1,126 @@
+*{margin: 0;padding: 0;text-decoration: none}
+ul{list-style: none;}
+.wrap{
+    width: 260px;
+    margin: 60px auto;
+}
+.wrap>.head , .foot{
+    width: 238px;
+    height: 50px;
+    color:#f0f0f0;
+    text-align: center;
+    line-height: 50px;
+    padding-left: 22px;
+    font-size: 20px;
+    font-weight: 600;
+    background-color: #0378a6;
+}
+.wrap>.head{
+    border-bottom: solid 1px #1db9ce;
+}
+.wrap>.out_ul>li{
+    width: 216px;
+}
+.wrap>.out_ul>li>a{
+    display: inline-block;
+    height: 19px;
+    line-height: 19px;
+    width:216px;
+    position: relative;
+    color: #f0f0f0;
+    padding: 14px 22px;
+    text-align: center;
+    font-size: 20px;
+    transition:background-color .3s linear;
+    border-bottom: solid 1px #048e93;
+    background-color: #0c9cb6;
+}
+.wrap>.out_ul>li:hover>a{
+    background-color: #1db9ce;
+}
+.wrap>.out_ul>li>a>i{
+    padding-right: 12px;
+    font-size: 18px;
+}
+.wrap>.out_ul>li>a>span{
+    float: right;
+    font-size: 18px;
+}
+/* 二级菜单样式 */
+.wrap>.out_ul>li>.Services_ul{
+    display: none;
+    width: 260px;
+}
+.wrap>.out_ul>li>.Services_ul>li{
+    width: 260px;  
+}
+.wrap>.out_ul>li>.Services_ul>li>a{
+    width: 210px;
+    height: 19px;
+    color: #f0f0f0;
+    padding: 14px 22px;
+        text-align: center;
+    display: inline-block;
+    line-height: 10px;
+    font-size: 18px;
+    border-left: solid 6px transparent;
+    background-color: #383838;
+}
+.wrap>.out_ul>li>.Services_ul>li>a>span{
+    float: right;
+    font-size: 18px;
+    text-align: center;
+}
+.wrap>.out_ul>li>.Services_ul>li:hover >a{
+    border-left: solid 6px #1db9ce;
+    transition: all .3s;
+}
+/* 三级菜单样式 */
+#Design_ul{
+    display: none;
+}
+#Design_ul>li>a{
+    width: 210px;
+    height: 19px;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 14px 6px 14px 38px;
+    display: inline-block;
+    line-height: 10px;
+    font-size: 16px;
+    border-left: solid 6px transparent;
+    background-color: #383838;
+}
+#Design_ul>li:hover >a{
+    border-left: solid 6px #1db9ce;
+    transition: all .3s;
+}
+
+
+.wrap>.out_ul>li>.Portfolio_ul{
+    width: 260px;
+    display: none;
+}
+.wrap>.out_ul>li>.Portfolio_ul>li{
+    width: 260px;  
+}
+.wrap>.out_ul>li>.Portfolio_ul>li>a{
+    width: 210px;
+    height: 19px;
+    color: #f0f0f0;
+    text-align: center;
+    padding: 14px 22px;
+    display: inline-block;
+    line-height: 10px;
+    font-size: 16px;
+    border-left: solid 6px transparent;
+    background-color: #383838;
+}
+.wrap>.out_ul>li>.Portfolio_ul>li>a>span{
+    float: right;
+    font-size: 18px;
+}
+.wrap>.out_ul>li>.Portfolio_ul>li:hover >a{
+    border-left: solid 6px #1db9ce;
+    transition: all .3s;
+}
